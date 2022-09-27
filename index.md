@@ -26,3 +26,5 @@ This denotes `inline code`.
 This is a
 code block.
 ```
+
+Here is some more text.
