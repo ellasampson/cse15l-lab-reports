@@ -1,3 +1,5 @@
+[Lab Report 1](https://ellasampson.github.io/cse15l-lab-reports/lab-report-1-week-0.html)
+
 Hello world!
 
 *These are italics.* **This is bold.**
