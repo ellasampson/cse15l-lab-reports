@@ -37,7 +37,7 @@
 
 - Before moving onto the next step where we will test out copying files remotely using `scp`, we need to exit the remote server. You can use either Ctrl + D or enter the command `exit`.
 
-### Step 4: Copying Files Remotely
+### Step 4: Moving Files
 
 - Create an example file to copy. This file is going to give us information about the system we are working with.
 - Copy
@@ -67,4 +67,31 @@
 
 - See how the output is different? The values reflect the new remote server!
 
+### Step 5: Setting an SSH Key
 
+- We can skip the password step by setting up `ssh-keygen`
+- In the terminal on your computer, run `ssh-keygen`
+- When asked for which file to save the key, just press enter to select the default file
+
+![Image 6](keygen.png)
+
+- Copy the public key by entering `ssh cs15lfa22!!@ieng6.ucsd.edu` and your password onto the client
+- On the server, enter `mkdir .ssh` and then log out
+- On the client, enter `scp \Users\ellas/.ssh/id_rsa.pub cs15lfa22!!@ieng6.ucsd.edu:~/.ssh/authorized_keys` with the path to your own file
+
+![Image 7](keygen2.png)
+
+- Now it is a lot quicker to copy and run files remotely!
+
+### Step 6: Optimizing Remote Running
+
+- To practice this easier way to copy and run files remotely, make an edit to the `WhereAmI.java` file locally
+- Enter `scp WhereAmI.java cs15lfa22fl@ieng6.ucsd.edu:~/` into the terminal
+- Enter `ssh cs15lfa22fl@ieng6.ucsd.edu "javac WhereAmI.java; java WhereAmI"` into the terminal
+- You should see the new output, with less steps to find it!
+
+![Image 8](keygen3.png)
+
+> You can run a command directly by putting it in quotes, and combine multiple commands in one line by separating them with a semicolon
+
+**Now you should have an idea of how to copy and run files remotely using SSH and SCP!**
