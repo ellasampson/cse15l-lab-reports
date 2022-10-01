@@ -7,19 +7,20 @@
 
 - Download vscode and follow the setup instructions
 - When you’re done, the window should look like this:
-![](vscode starter menu.png)
+
+![Image 1](vscodestartermenu.png)
 
 ### Step 2: Remotely Connect
 
 - If you're on a Windows computer, check if you already have the OpenSSH client installed. If not, install it [here](https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui).
 - Open a new terminal in VSCode
 - Input the command `ssh cs15lfa22!!@ieng6.ucsd.edu` with the last 2 digits of *your* username in place of `!!`
-- You should recieve a message similar to the following (this message can slightly vary):
-- INSERT PICTURE
 - Type `yes` when prompted and enter, then enter your password
 > I had an issue at first! Make sure to reset your password before entering it for the first time. Some of my lab partners also encountered issues with their passwords, so if resetting it doesnt work, try entering your AD password.
 - You should now see something similar to this in your console:
-- INSERT PICTURE
+
+![Image 2](sshlogin.png)
+
 - You should now be connected to the remote server!
 
 ### Step 3: Test Commands
