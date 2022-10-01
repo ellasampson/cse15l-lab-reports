@@ -7,7 +7,7 @@
 
 - Download vscode and follow the setup instructions
 - When you’re done, the window should look like this:
-- INSERT PICTURE
+![](vscode starter menu.png)
 
 ### Step 2: Remotely Connect
 
@@ -29,8 +29,8 @@
   - `ls -lat`
   - `ls -a` 
   > The `ls` commands will list the files in the given directory.
-  - cp /home/linux/ieng6/cs15lfa22/public/hello.txt ~/
-  - cat /home/linux/ieng6/cs15lfa22/public/hello.txt
+  - `cp /home/linux/ieng6/cs15lfa22/public/hello.txt ~/`
+  - `cat /home/linux/ieng6/cs15lfa22/public/hello.txt`
 - Before moving onto the next step where we will test out copying files remotely using `scp`, we need to exit the remote server. You can use either Ctrl + D or enter the command `exit`.
 
 ### Step 4: Copying Files Remotely
