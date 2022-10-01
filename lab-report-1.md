@@ -55,12 +55,16 @@
 - Compile and run the program:
   `javac WhereAmI.java`
   `java WhereAmI`
-- INSERT PICTURE
+
+![Image 4](remotewai.png)
+
 - Now in the same terminal, run the command `scp WhereAmI.java cs15lfa22!!@ieng6.ucsd.edu:~/` and enter your password again.
 - Input the command `cs15lfa22!!@ieng6.ucsd.edu` and run the program again:
   `javac WhereAmI.java`
   `java WhereAmI`
-- INSERT PICTURE
+
+![Image 5](scpssh.png)
+
 - See how the output is different? The values reflect the new remote server!
 
 
