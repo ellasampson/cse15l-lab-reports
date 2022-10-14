@@ -66,7 +66,7 @@ Next, I added the string "rain". The same if statements as the two prior example
 
 ![Image 4](search.png)
 
-Lastly, this time I searched for the value "sun". The handleRquest method is called again, but this time the if statement `if (url.getPath().contains("/search"))` is what's evaluated to be true. The contents of this are executed, and a new String Array is created with the values [s, sun], along with a new empty ArrayList `quer`. The following if statement `if (param[0].equals("s"))` is true, and the contents are executed. The method loops through the ArrayList `stringsList` (as a reminder, this ArrayList contains the values [sunshine, sunglasses, rain], and if the given value contains the search query "sun", it is added to the new ArrayList `quer`. This therefore filters only the values containing "sun". At the end of the loop, `quer` contains [sunshine, sunglasses]. The method then returns the String "Strings containing search: [sunshine, sunglasses]" which is what is now shown on the page.
+Lastly, this time I searched for the value "sun". The handleRquest method is called again, but this time the if statement `if (url.getPath().contains("/search"))` is what's evaluated to be true. The contents of this are executed, and a new String Array is created with the values [s, sun], along with a new empty ArrayList `quer`. The following if statement `if (param[0].equals("s"))` is true, and the contents are executed. The method loops through the ArrayList `stringsList` (as a reminder, this ArrayList contains the values [sunshine, sunglasses, rain]), and if the given value contains the search query "sun", it is added to the new ArrayList `quer`. This therefore filters only the values containing "sun". At the end of the loop, `quer` contains [sunshine, sunglasses]. The method then returns the String "Strings containing search: [sunshine, sunglasses]" which is what is now shown on the page.
 
 #### Part 2
 
@@ -74,3 +74,42 @@ Lastly, this time I searched for the value "sun". The handleRquest method is cal
 
 Failure-inducing input:
 
+![Image 5](arraytests.png)
+
+Symptom:
+
+![Image 6](testreversed.png)
+
+Bug:
+
+![Image 7](arrayexamples.png)
+
+The method reversed creates a new array and assigns the values of the new array to the existing one, rather than doing the opposite, and returns that array instead of the new one. In order to fix this issue, the values should be assigned to the new array from the existing array, and the new array should be returned.
+
+![Image 8](reversefixed.png)
+
+Explanation:
+
+The expected output of my failure-inducing input of [1,2,3,4] was [4,3,2,1]. The test found an error at index 0, it expected <4> but was <0>. Since the code assigns the values of the new array, which only contains empty values, the resulting array only contains empty values. 
+
+**ListExamples:**
+
+Failure-inducing input:
+
+![Image 9](listtest.png)
+
+Symptom:
+
+![Image 10](listfailure.png)
+
+Bug:
+
+![Image 11](listfilter.png)
+
+The method adds the checked strings to the beginning of the list, rather than the end. This reverses the order and is incorrect because the method should return the values in the original order. To fix this issue, the strings should be added to the end of the list, without including an index in the add function.
+
+![Image 12](listfix.png)
+
+Explanation:
+
+The test expected [Short, Hi] but received [Hi, Short]. This is because the method adds the strings to the new list in the opposite order of how they should be within the list.
