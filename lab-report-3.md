@@ -67,3 +67,10 @@ Next, I added the string "rain". The same if statements as the two prior example
 ![Image 4](search.png)
 
 Lastly, this time I searched for the value "sun". The handleRquest method is called again, but this time the if statement `if (url.getPath().contains("/search"))` is what's evaluated to be true. The contents of this are executed, and a new String Array is created with the values [s, sun], along with a new empty ArrayList `quer`. The following if statement `if (param[0].equals("s"))` is true, and the contents are executed. The method loops through the ArrayList `stringsList` (as a reminder, this ArrayList contains the values [sunshine, sunglasses, rain], and if the given value contains the search query "sun", it is added to the new ArrayList `quer`. This therefore filters only the values containing "sun". At the end of the loop, `quer` contains [sunshine, sunglasses]. The method then returns the String "Strings containing search: [sunshine, sunglasses]" which is what is now shown on the page.
+
+#### Part 2
+
+**ArrayExamples:**
+
+Failure-inducing input:
+
